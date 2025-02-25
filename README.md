@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # 🌍 World Development Indicators (WDI) 2022 Analysis
 
 ## 📖 Overview
@@ -34,14 +28,16 @@ trends while demonstrating proficiency in **Quarto, Git, and GitHub**.
 
 ```         
 📦 WDI-2022-Analysis
-│── 📄 wdi-2022-analysis.qmd     # Main Quarto analysis file
-│── 📄 wdi-2022-analysis.html    # HTML version of the analysis report
-│── 📄 wdi-2022-analysis.pdf     # PDF version of the report
-│── 📄 wdi-2022-presentation.qmd # Reveal.js presentation file
+│── 📄 wdi-2022-analysis.qmd      # Main Quarto analysis file
+│── 📄 wdi-2022-analysis.html     # HTML version of the analysis report
+│── 📄 wdi-2022-analysis.pdf      # PDF version of the report
+│── 📄 wdi-2022-presentation.qmd  # Reveal.js presentation file
 │── 📄 wdi-2022-presentation.html # HTML version of the presentation
-│── 📁 styles/                   # Custom CSS for formatting
+│── 📁 wdi-2022-analysis_files/   # Supporting HTML files for the analysis
+│── 📁 styles/                    # Custom CSS for formatting
 │── 📁 bibliography/              # References and citations (BibTeX format)
 │── 📁 figures/                   # Generated plots and visualizations
+│── 📄 wdi.csv                    # Dataset file
 │── 📄 README.md                  # Documentation (You're reading it now!)
 ```
 
@@ -51,10 +47,9 @@ trends while demonstrating proficiency in **Quarto, Git, and GitHub**.
 
 The report includes:
 
-✅ **EDA on key indicators (GDP, Literacy Rate, Life Expectancy, CO₂
-Emissions, etc.)**\
-✅ **Data visualizations: Scatter plots, bar charts, and interactive
-plots**\
+✅ **EDA on key indicators (GDP, Life Expectancy, Unemployment
+Rate, etc.)**\
+✅ **Data visualizations: Scatter plots and bar charts**\
 ✅ **Summary statistics & insights**\
 ✅ **Formatted tables and referenced sources**
 
@@ -70,7 +65,7 @@ highlight key findings and visualizations.
 ### **🔗 View the Presentation**
 
 [📢 Click Here to View the Reveal.js
-Presentation](https://xingke160.github.io/WDI-2022-Analysis/wdi-2022-presentation.html)
+Presentation](https://rawcdn.githack.com/xingke160/World-Development-Indicators-2022-Analysis/refs/heads/main/wdi%202022%20presentation.html#/title-slide)
 
 ------------------------------------------------------------------------
 
@@ -104,9 +99,9 @@ quarto render wdi-2022-presentation.qmd --to revealjs
 ## 🌍 Hosted Versions
 
 -   📄 [**HTML
-    Report**](https://xingke160.github.io/WDI-2022-Analysis/wdi-2022-analysis.html)
+    Report**](https://rawcdn.githack.com/xingke160/World-Development-Indicators-2022-Analysis/refs/heads/main/wdi%202022%20analysis.html)
 -   🎤 [**Reveal.js
-    Presentation**](https://xingke160.github.io/WDI-2022-Analysis/wdi-2022-presentation.html)
+    Presentation**](https://rawcdn.githack.com/xingke160/World-Development-Indicators-2022-Analysis/refs/heads/main/wdi%202022%20presentation.html#/title-slide)
 -   📜 **PDF Report** (Available in repository)
 
 ------------------------------------------------------------------------
@@ -135,13 +130,6 @@ Retrieved from
 
 This project is for academic purposes, but feel free to **fork** and
 explore the dataset further.
-
-------------------------------------------------------------------------
-
-## 📜 License
-
-This project is released under the **MIT License**. You are free to
-modify and distribute it.
 
 ------------------------------------------------------------------------
 
