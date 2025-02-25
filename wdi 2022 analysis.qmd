@@ -1,0 +1,141 @@
+---
+title: "World Development Indicators - 2022 Analysis"
+author: "Zhaoxu Zhang"
+date: "2025-02-25"
+format:
+  html: default
+  pdf: default
+bibliography: bibliography/references.bib
+editor: visual
+jupyter: python3
+---
+
+## Introduction {#sec-intro}
+
+Economic and social indicators play a crucial role in assessing a nation's development. This report analyzes three key **World Development Indicators (WDI)**:
+
+-   **GDP per Capita (`gdp_per_capita`)** – Measures economic performance.
+
+-   **Life Expectancy (`life_expectancy`)** – Reflects overall health conditions.
+
+-   **Unemployment Rate (`unemployment_rate`)** – Indicates labor market stability.
+
+Using **data visualization and statistical summaries**, this report highlights patterns, trends, and insights derived from these indicators.
+
+## Data Overview {#sec-data}
+
+The dataset used in this analysis is derived from the **World Bank's World Development Indicators (WDI) database [@worldbank2022]**, which compiles key statistics on economic and social trends worldwide.
+
+```{python}
+#| echo: false
+import pandas as pd
+
+# Loading the dataset
+df = pd.read_csv(r"E:\My Downloads\wdi.csv")
+```
+
+```{python}
+# Summary statistics
+selected_indicators = ["gdp_per_capita", "life_expectancy", "unemployment_rate"]
+df[selected_indicators].describe()
+```
+
+### Handling Missing Values
+
+Before proceeding with the analysis, we handle missing values by imputing them.
+
+```{python}
+# Fill missing values with the median
+df[selected_indicators] = df[selected_indicators].fillna(df[selected_indicators].median())
+
+# Verify missing values are removed
+df[selected_indicators].isnull().sum()
+```
+
+## Visual Analysis {#sec-visuals}
+
+To better understand global trends, we visualize the data.
+
+### Bar Chart: Top 10 Countries by GDP per Capita
+
+Figure @fig-top-gdp shows the **top 10 countries with the highest GDP per capita**.
+
+```{python}
+#| echo: false
+#| label: fig-top-gdp
+#| fig-cap: "Top 10 Countries by GDP per Capita"
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Selecting the top 10 countries by GDP per capita
+top_gdp = df[['country', 'gdp_per_capita']].nlargest(10, 'gdp_per_capita')
+
+# Plot
+plt.figure(figsize=(10,6))
+sns.barplot(x=top_gdp["gdp_per_capita"], y=top_gdp["country"], hue=top_gdp["country"], palette="viridis", legend=False)
+plt.xlabel("GDP per Capita (USD)")
+plt.ylabel("Country")
+plt.title("Top 10 Countries by GDP per Capita")
+plt.show()
+```
+
+#### Observations:
+
+-   The **highest GDP per capita** is concentrated in **developed nations**.
+
+-   These countries generally **rank high in quality of life metrics**.
+
+### Scatter Plot: Life Expectancy vs Unemployment Rate
+
+Several studies indicate that countries with **higher unemployment rates** often experience **lower life expectancy**, as prolonged joblessness can lead to financial instability and mental health issues [@un2022].
+
+Figure @fig-life-unemployment highlights the correlation between **life expectancy** and **unemployment rate**.
+
+```{python}
+#| echo: false
+#| label: fig-life-unemployment
+#| fig-cap: "Life Expectancy vs Unemployment Rate"
+plt.figure(figsize=(8,6))
+plt.scatter(df['unemployment_rate'], df['life_expectancy'], alpha=0.6, color='green')
+plt.xlabel("Unemployment Rate (%)")
+plt.ylabel("Life Expectancy (Years)")
+plt.title("Life Expectancy vs Unemployment Rate")
+plt.grid(True)
+plt.show()
+```
+
+#### Observations:
+
+-   **Higher unemployment rates** are associated with **lower life expectancy**.
+
+-   Countries with **high employment** tend to have **longer lifespans**.
+
+## Exploratory Data Analysis {#sec-eda}
+
+To understand trends, we can summarize the data.
+
+Table @tbl-summary presents **summary statistics**.
+
+```{python}
+#| label: tbl-summary
+#| tbl-cap: "Summary Statistics of Key Indicators"
+from tabulate import tabulate
+summary_table = df[['gdp_per_capita', 'life_expectancy', 'unemployment_rate']].describe()
+print(tabulate(summary_table, headers='keys', tablefmt='pretty'))
+```
+
+## Findings and Discussion {#sec-discussion}
+
+From @fig-top-gdp, we see:
+
+-   Wealthier countries have **higher GDP per capita**, which often correlates with **better infrastructure and healthcare**.
+
+From @fig-life-unemployment, we conclude:
+
+-   **Higher unemployment rates** are linked to **lower life expectancy**.
+
+-   A stable job market **improves overall well-being**.
+
+@tbl-summary provides **numerical validation** for these insights.
+
+## References {#sec-references}

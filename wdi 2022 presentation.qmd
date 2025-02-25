@@ -1,0 +1,109 @@
+---
+title: "World Development Indicators - 2022 Analysis"
+author: "Zhaoxu Zhang"
+date: "2025-02-25"
+format:
+  revealjs:
+    slide-number: true
+    transition: fade
+    self-contained: true
+    fig-responsive: true
+    css: styles/styles.css
+bibliography: bibliography/references.bib
+---
+
+## **Introduction** {.slide-class data-transition="convex"}
+
+-   Understanding economic and social indicators is key to assessing global development.
+-   This analysis explores **three main indicators**:
+    -   **GDP per Capita** – Reflects economic strength.
+    -   **Life Expectancy** – Measures public health and living conditions.
+    -   **Unemployment Rate** – Indicates labor market stability.
+-   **Objective:** To analyze how these factors interrelate and their implications.
+
+------------------------------------------------------------------------
+
+## **Data Overview** {.slide-class data-transition="slide"}
+
+-   **Dataset:** Derived from the **World Bank's World Development Indicators (2022)** [@worldbank2022].
+-   Focuses on **global economic and social statistics**.
+-   **Filtered Data:**
+    -   Year: **2022**
+    -   Key variables: **GDP per Capita, Life Expectancy, and Unemployment Rate**.
+
+------------------------------------------------------------------------
+
+## **Exploratory Data Analysis** {.slide-class data-transition="slide"}
+
+-   **What does the data tell us?**
+-   **Key Observations:**
+    -   **GDP per Capita** varies widely across countries.
+    -   **Life Expectancy** generally increases with economic development.
+    -   **Higher Unemployment** is often linked to **poorer health outcomes**.
+
+### **Summary Statistics (2022)**
+
+| Metric                | Mean   | Min   | Max     |
+|-----------------------|--------|-------|---------|
+| GDP per Capita (USD)  | 19,522 | 259   | 240,862 |
+| Life Expectancy (yrs) | 72.45  | 52.99 | 85.38   |
+| Unemployment Rate (%) | 7.02   | 0.13  | 37.85   |
+
+------------------------------------------------------------------------
+
+## **Life Expectancy vs. Unemployment Rate** {.slide-class data-transition="slide"}
+
+-   **How does unemployment affect life expectancy?**
+-   **Key Insights:**
+    -   Countries with **higher unemployment rates** often exhibit **lower life expectancy**.
+    -   Economies with stable job markets tend to have **better health outcomes**.
+
+::: center
+![Life Expectancy vs. Unemployment Rate](figures/fig-life-unemployment.png){width="504"}
+:::
+
+------------------------------------------------------------------------
+
+## **Top 10 Countries by GDP per Capita** {.slide-class data-transition="slide"}
+
+-   **Which countries have the highest GDP per capita?**
+-   **Key Observations:**
+    -   Wealthier nations **invest more in infrastructure and healthcare**.
+    -   Smaller, resource-rich countries dominate the rankings.
+
+::: center
+![Top 10 Countries by GDP per Capita](figures/fig-top-gdp.png){width="699"}
+:::
+
+------------------------------------------------------------------------
+
+## **Findings & Discussion** {.slide-class data-transition="slide"}
+
+According to the **United Nations (2022)** [@un2022], economic stability plays a significant role in improving social welfare and long-term development.
+
+### **1. GDP per Capita & Quality of Life**
+
+-   Higher **GDP per Capita** is strongly linked to **better healthcare and infrastructure**.
+-   Economic prosperity often correlates with **higher life expectancy**.
+
+### **2. Unemployment & Health Impacts**
+
+-   High **Unemployment Rates** → **Lower Life Expectancy**.
+-   Countries with stable job markets tend to see **better overall well-being**.
+
+### **3. Policy Implications**
+
+-   Economic policies should prioritize **job stability and social welfare**.
+-   Investments in **education, healthcare, and employment programs** are critical.
+
+------------------------------------------------------------------------
+
+## **Conclusion** {.slide-class data-transition="slide"}
+
+-   **Economic development alone is not enough** – stability in employment and strong healthcare systems are crucial.
+-   Countries that focus on **economic growth while ensuring job security** experience **higher overall well-being**.
+-   **Future Research:** Exploring **regional variations** in these indicators could provide more insights.
+
+------------------------------------------------------------------------
+
+## **References** {.slide-class data-transition="concave"}
