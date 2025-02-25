@@ -27,7 +27,6 @@ Using **data visualization and statistical summaries**, this report highlights p
 The dataset used in this analysis is derived from the **World Bank's World Development Indicators (WDI) database [@worldbank2022]**, which compiles key statistics on economic and social trends worldwide.
 
 ```{python}
-#| echo: false
 import pandas as pd
 
 # Loading the dataset
